@@ -9,13 +9,22 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const registerUsers = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send("Get Users");
+const getTasks = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("Get Tasks");
 });
-const loginUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send("Login User");
+const createTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    res.send("Create Tasks");
 });
-const currentUser = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
-    res.send("You are the current user");
+const getTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const taskId = req.params.id;
+    res.send(taskId);
 });
-exports.default = { registerUsers, loginUser, currentUser };
+const updateTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const taskId = req.params.id;
+    res.send(`Update the ${taskId}`);
+});
+const deleteTask = (req, res) => __awaiter(void 0, void 0, void 0, function* () {
+    const taskId = req.params.id;
+    res.send(`Delete the ${taskId}`);
+});
+exports.default = { getTasks, createTask, getTask, updateTask, deleteTask };

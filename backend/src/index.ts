@@ -9,6 +9,7 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+app.use("/api/tasks", require("./routes/tasks"));
 app.use("/api/users", require("./routes/users"));
 
 app.listen(port, () => {
